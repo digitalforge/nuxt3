@@ -20,6 +20,11 @@ definePageMeta({
 // Fetch products
 // this fetch code can be run in both the server and the browser
 const { data: products } = await useFetch("https://fakestoreapi.com/products")
+
+useHead({
+  title: "Nuxt App | Merch",
+  meta: [{ name: "description", content: "Nuxt App Merch" }],
+})
 </script>
 
 <style lang="scss" scoped></style>

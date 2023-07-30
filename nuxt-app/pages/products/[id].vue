@@ -1,5 +1,9 @@
 <template>
   <div>
+    <Head>
+      <Title>Nuxt App | {{ product.title }}</Title>
+      <Meta name="description" :content="product.description" />
+    </Head>
     <ProductDetails :product="product" />
   </div>
 </template>
@@ -16,6 +20,15 @@ const { data: product } = await useFetch(productURI, { key: id })
 definePageMeta({
   layout: "products",
 })
+
+if (!product.value) {
+  throw createError({
+    statusCode: 404,
+    message: "Product not found",
+    // set fatal to true to force the error to show in case the error pages is requested from the browser
+    fatal: true,
+  })
+}
 </script>
 
 <style lang="scss" scoped></style>

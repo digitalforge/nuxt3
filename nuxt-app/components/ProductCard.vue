@@ -11,6 +11,7 @@
 <script setup>
 // this is how we use props in Nuxt
 const { product } = defineProps(["product"])
+console.log(window.location.pathname)
 </script>
 
 <style scoped>

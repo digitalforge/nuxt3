@@ -12,10 +12,22 @@
       enim, ipsa error quo accusamus corrupti ipsum ducimus cum, reiciendis ea
       vel quod.
     </p>
+    <div>{{ data }}</div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+//get request
+//const { data } = await useFetch("/api/ninja?name=mario")
+
+//post request
+// const { data } = await useFetch("/api/ninja?name=mario", {
+//   method: "post",
+//   body: { age: 30 },
+// })
+
+const { data } = await useFetch("/api/currency/GBP")
+</script>
 
 <style scoped>
 h2 {
